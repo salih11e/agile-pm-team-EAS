@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": "1781117069421",
+    "fach": "Wirtschaftsinformatik",
+    "titel": "Klausurvorbereitung",
+    "inhalt": "Die wichtigsten REST-Prinzipien lernen.",
+    "examRelevant": true,
+    "timestamp": "2026-06-10T18:44:29.421Z"
+  }
+]

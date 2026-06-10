@@ -1,0 +1,15 @@
+### 1. Alle Notizen anzeigen (Sollte anfangs leer sein)
+GET http://localhost:3000/api/notes
+
+### 2. Eine neue Notiz erstellen
+POST http://localhost:3000/api/notes
+Content-Type: application/json
+
+{
+    "fach": "Wirtschaftsinformatik",
+    "titel": "Klausurvorbereitung",
+    "inhalt": "Die wichtigsten REST-Prinzipien lernen."
+}
+
+### 3. Prüfungsrelevanz markieren (Ersetze die ID unten mit der echten ID!)
+PATCH http://localhost:3000/api/notes/HIER_DIE_ID_EINTRAGEN/mark-exam
