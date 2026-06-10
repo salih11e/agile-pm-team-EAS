@@ -36,5 +36,33 @@ router.post('/', (req, res) => {
     
     res.status(201).json(newNote);
 });
+// US-003: Einzelne Notiz über ihre ID anzeigen
+router.get('/:id', (req, res) => {
+    const notes = getNotes();
+    // Sucht die Notiz, deren ID mit der ID aus der URL übereinstimmt
+    const note = notes.find(n => n.id === req.params.id);
 
+    if (!note) {
+        return res.status(404).json({ error: 'Notiz nicht gefunden' });
+    }
+    res.json(note);
+});
+
+// US-007: Prüfungsrelevanz markieren
+router.patch('/:id/mark-exam', (req, res) => {
+    const notes = getNotes();
+    const noteIndex = notes.findIndex(n => n.id === req.params.id);
+
+    if (noteIndex === -1) {
+        return res.status(404).json({ error: 'Notiz nicht gefunden' });
+    }
+
+    // Markierung setzen
+    notes[noteIndex].examRelevant = true;
+
+    // Aktualisierte Liste in der JSON-Datei speichern
+    fs.writeFileSync(dataPath, JSON.stringify(notes, null, 2));
+
+    res.json({ message: 'Erfolgreich als prüfungsrelevant markiert', note: notes[noteIndex] });
+});
 module.exports = router;
