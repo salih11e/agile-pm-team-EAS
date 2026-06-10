@@ -12,4 +12,4 @@ Content-Type: application/json
 }
 
 ### 3. Prüfungsrelevanz markieren (Ersetze die ID unten mit der echten ID!)
-PATCH http://localhost:3000/api/notes/HIER_DIE_ID_EINTRAGEN/mark-exam
+PATCH http://localhost:3000/api/notes/HIERIDEINTRAGEN/mark-exam
