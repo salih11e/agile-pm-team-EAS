@@ -8,7 +8,6 @@ Team
 • Enes Ersoy (Product Owner)
 • Ajuub Husein (Scrum Master)
 • Salih Erkut (Developer)
-• [Dein Name] (Developer)
 
 Beschreibung
 
