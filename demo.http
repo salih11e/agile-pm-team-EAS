@@ -1,15 +1,56 @@
-### 1. Alle Notizen anzeigen (Sollte anfangs leer sein)
-GET http://localhost:3000/api/notes
+### =========================================
+### NOTIZEN-APP REST-API TESTDATEI
+### =========================================
 
-### 2. Eine neue Notiz erstellen
+### -----------------------------------------
+### SPRINT 1 FEATURES
+### -----------------------------------------
+
+### US-001: Neue Notiz erstellen (POST)
 POST http://localhost:3000/api/notes
 Content-Type: application/json
 
 {
     "fach": "Wirtschaftsinformatik",
-    "titel": "Klausurvorbereitung",
-    "inhalt": "Die wichtigsten REST-Prinzipien lernen."
+    "titel": "Scrum Basics",
+    "inhalt": "Sprint Planning, Daily, Review, Retrospektive."
 }
 
-### 3. Prüfungsrelevanz markieren (Ersetze die ID unten mit der echten ID!)
-PATCH http://localhost:3000/api/notes/HIERIDEINTRAGEN/mark-exam
+### US-002: Alle Notizen anzeigen (GET)
+GET http://localhost:3000/api/notes
+
+
+### -----------------------------------------
+### SPRINT 2 FEATURES (Spezifische Routen)
+### -----------------------------------------
+
+### US-008: Nach Prüfungsrelevanz filtern (GET)
+GET http://localhost:3000/api/notes/filter/exam-relevant
+
+### US-006: Volltextsuche (GET) - Sucht nach "scrum"
+GET http://localhost:3000/api/notes/search?q=scrum
+
+
+### -----------------------------------------
+### DYNAMISCHE ROUTEN (Benötigen eine ID!)
+### Ersetze "DEINE_ID_HIER" durch eine echte ID aus dem GET-Befehl
+### -----------------------------------------
+
+### US-003: Einzelne Notiz anzeigen (GET)
+GET http://localhost:3000/api/notes/DEINE_ID_HIER
+
+### US-007: Prüfungsrelevanz markieren (PATCH)
+PATCH http://localhost:3000/api/notes/DEINE_ID_HIER/mark-exam
+
+### US-004: Notiz bearbeiten (PUT)
+PUT http://localhost:3000/api/notes/DEINE_ID_HIER
+Content-Type: application/json
+
+{
+    "fach": "Wirtschaftsinformatik",
+    "titel": "Scrum Basics (Aktualisiert)",
+    "inhalt": "Product Owner, Scrum Master, Developer Rollen hinzugefügt."
+}
+
+### US-005: Notiz löschen (DELETE)
+DELETE http://localhost:3000/api/notes/DEINE_ID_HIER
